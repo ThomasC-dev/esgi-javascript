@@ -10,6 +10,8 @@ function capitalize(chaine) {
     for(value of words) {
         if(str.length > 0)
             str += " " + ucfirst(value);
+        else
+            str += ucfirst(value);
     }
     return str;
 }
