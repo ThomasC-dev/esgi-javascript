@@ -12,7 +12,7 @@ function capitalize(chaine) {
         if (i > 0) {
             str += " ";
         }
-        str += ucfirst(words[i]);
+        str += ucfirst(words[i].toLowerCase());
     }
     return str;
 }
@@ -21,6 +21,8 @@ function camelCase(chaine) {
     if(typeof chaine !== "string" || chaine === "") return "";
     return capitalize(chaine).split(" ").join("");
 }
+
+console.log(camelCase("test"));
 
 function snake_case(chaine) {
     if(typeof chaine !== "string" || chaine === "") return "";
