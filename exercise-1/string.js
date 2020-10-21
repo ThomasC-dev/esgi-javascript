@@ -5,28 +5,11 @@ function ucfirst(chaine) {
 
 function capitalize(chaine) {
     if (typeof(chaine) != "string" || chaine === "") return "";
-
-    let str = "";
-    let words = chaine.split(" ");
-    for(let i=0;i<words.length;i++) {
-        if (i > 0) {
-            str += " ";
-        }
-        str += ucfirst(words[i].toLowerCase());
-    }
-    return str;
+    return chaine.split(' ').map(word => ucfirst(chaine.toLowerCase)).join(" ");
 }
 
 function camelCase(chaine) {
-    if (typeof(chaine) != "string" || chaine === "") return "";
-
-    let str = "";
-    let string = chaine.replace('_',' ');
-    let words = string.split(" ");
-    for(let i=0;i<words.length;i++) {
-        str += ucfirst(words[i].toLowerCase());
-    }
-    return str;
+    return capitalize(chaine).replace(/\w/g, "");
 }
 
 function snake_case(chaine) {
