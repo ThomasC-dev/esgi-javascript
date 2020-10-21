@@ -9,20 +9,13 @@ function capitalize(chaine) {
 }
 
 function camelCase(chaine) {
-    return capitalize(chaine).replace(/\w/g, "");
+    if (typeof(chaine) != "string" || chaine === "") return "";
+    return capitalize(chaine).replace(/\W/g, "");
 }
 
 function snake_case(chaine) {
-    if(typeof chaine !== "string" || chaine === "") return "";
-    const words = chaine.split(" ");
-    let str = "";
-    for(value of words) {
-        if(str.length > 0)
-            str += "_" + value.toLowerCase();
-        else
-            str +=  value.toLowerCase();
-    }
-    return str;
+    if (typeof(chaine) != "string" || chaine === "") return "";
+    return chaine.toLowerCase().replace(/\W/g, "_");
 }
 
 function leet(chaine) {
