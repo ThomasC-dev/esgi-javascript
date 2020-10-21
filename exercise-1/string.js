@@ -21,7 +21,8 @@ function camelCase(chaine) {
     if (typeof(chaine) != "string" || chaine === "") return "";
 
     let str = "";
-    let words = chaine.split(" ");
+    let string = chaine.replace('_',' ');
+    let words = string.split(" ");
     for(let i=0;i<words.length;i++) {
         str += ucfirst(words[i].toLowerCase());
     }
