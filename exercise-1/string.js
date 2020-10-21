@@ -71,3 +71,29 @@ function prop_access(obj, path) {
     }
     return obj;
 }
+
+function verlan(chaine) {
+    if (typeof(chaine) != "string" && chaine === "") return ""
+    let words = chaine.split(" ");
+
+    let str = "";
+    for (let i=0;i<words.length;i++) {
+        if (i>0) {
+            str += " ";
+        }
+
+        let verlanWord = "";
+        for (let j=words[i].length-1;j>=0;j--) {
+            verlanWord += words[i].charAt(j);
+        }
+        str += verlanWord;
+    }
+
+    return str;
+}
+
+function yoda(string) {
+    if (typeof string !== "string" && string !== "") return ""
+
+    return string.split(" ").reverse().join(" ")
+}
