@@ -1,4 +1,3 @@
-  
 function type_check_v1(val, type) {
   switch (typeof val) {
     case "object":
